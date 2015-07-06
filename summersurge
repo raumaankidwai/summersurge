@@ -1,0 +1,21 @@
+#!/bin/bash
+x=$(($(curl -s https://www.khanacademy.org/profile/icamlearn | grep Profile.init | sed "s/.*points...//" | sed "s/\".*//" | head -c7)-4166122))
+y=$(($(curl -s https://www.khanacademy.org/profile/$1 | grep Profile.init | sed "s/.*points...//" | sed "s/\".*//" | head -c7)-1935848))
+z=$(($x-$y))
+w=$(echo $z | sed "s/-//")
+a=$([[ $z -lt 0 ]]; echo $?)
+b=$(if [[ $a ]]; then echo "ahead"; else echo "behind"; fi)
+e=$(if [[ $a ]]; then echo '! :D'; else echo ". D:"; fi)
+d=$(ruby -rdate -e "puts Date.parse('$(date +%Y-%m-%d)') - Date.parse('2015-06-23')" | cut -d/ -f1)
+p=$((35 * $x / $d))
+l=$(($y-$p))
+m=$(echo $l | sed "s/-//")
+n=$(if [[ $l -lt 0 ]]; then echo "I need $m points to reach Cam overall."; else echo "I'm $m points ahead in the long run!"; fi)
+echo "Cam has earned | $x points."
+echo " I have earned | $y points."
+echo "—————————————————————————————————————————"
+echo "I'm $b by $w points$e"
+echo "—————————————————————————————————————————"
+echo "Cam has earned $x points in $d days."
+echo "Cam would earn ~$p points in 35 days."
+echo $n
