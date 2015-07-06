@@ -1,6 +1,6 @@
 #!/bin/bash
 x=$(($(curl -s https://www.khanacademy.org/profile/icamlearn | grep Profile.init | sed "s/.*points...//" | sed "s/\".*//" | head -c7)-4166122))
-y=$(($(curl -s https://www.khanacademy.org/profile/$1 | grep Profile.init | sed "s/.*points...//" | sed "s/\".*//" | head -c7)-1935848))
+y=$(($(curl -s https://www.khanacademy.org/profile/$1 | grep Profile.init | sed "s/.*points...//" | sed "s/\".*//" | head -c7)-$2))
 z=$(($x-$y))
 w=$(echo $z | sed "s/-//")
 a=$([[ $z -lt 0 ]]; echo $?)
