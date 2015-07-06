@@ -24,6 +24,7 @@ echo "Cam has earned $x points in $d days."
 echo "Cam would earn ~$p points in 35 days."
 echo $n
 if $c; then
+echo "—————————————————————————————————————————"
 echo "That's $v new videos,"
 echo "$g easy Light-Speeds,"
 echo "or $i Inspirations!"
