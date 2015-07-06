@@ -1,2 +1,2 @@
 # summersurge
-Khan Academy Summer Surge challenge tracker
+[https://www.khanacademy.org/ Khan Academy] Summer Surge challenge tracker
