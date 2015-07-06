@@ -10,7 +10,11 @@ d=$(ruby -rdate -e "puts Date.parse('$(date +%Y-%m-%d)') - Date.parse('2015-06-2
 p=$((35 * $x / $d))
 l=$(($y-$p))
 m=$(echo $l | sed "s/-//")
-n=$(if [[ $l -lt 0 ]]; then echo "I need $m points to reach Cam overall."; else echo "I'm $m points ahead in the long run!"; fi)
+c=$([[ $l -lt 0 ]])
+n=$(if $c; then echo "I need $m points to reach Cam overall."; else echo "I'm $m points ahead in the long run!"; fi)
+v=$(($m / 850 + 1))
+g=$(($m / 9725 + 1))
+i=$(($m / 500 + 1))
 echo "Cam has earned | $x points."
 echo " I have earned | $y points."
 echo "—————————————————————————————————————————"
@@ -19,3 +23,8 @@ echo "————————————————————————�
 echo "Cam has earned $x points in $d days."
 echo "Cam would earn ~$p points in 35 days."
 echo $n
+if $c; then
+echo "That's $v new videos,"
+echo "$g easy Light-Speeds,"
+echo "or $i Inspirations!"
+fi
