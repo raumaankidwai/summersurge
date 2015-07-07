@@ -15,6 +15,9 @@ n=$(if $c; then echo "I need $m points to reach Cam overall."; else echo "I'm $m
 v=$(($m / 850 + 1))
 g=$(($m / 9725 + 1))
 i=$(($m / 500 + 1))
+r=$([[ $v -eq 1 ]]||echo s)
+s=$([[ $g -eq 1 ]]||echo s)
+t=$([[ $i -eq 1 ]]||echo s)
 echo "Cam has earned | $x points."
 echo " I have earned | $y points."
 echo "—————————————————————————————————————————"
@@ -25,7 +28,7 @@ echo "Cam would earn ~$p points in 35 days."
 echo $n
 if $c; then
 echo "—————————————————————————————————————————"
-echo "That's $v new videos,"
-echo "$g easy Light-Speeds,"
-echo "or $i Inspirations!"
+echo "That's $v new video$r,"
+echo "$g easy Light-Speed$s,"
+echo "or $i Inspiration$t!"
 fi
