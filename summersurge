@@ -11,7 +11,7 @@ a=$([[ $z -lt 0 ]]; echo $?)
 b=$(if [[ $a ]]; then echo "ahead"; else echo "behind"; fi)
 e=$(if [[ $a ]]; then echo '! :D'; else echo ". D:"; fi)
 d=$(ruby -rdate -e "puts Date.parse('$(date +%Y-%m-%d)') - Date.parse('2015-06-23')" | cut -d/ -f1)
-p=$((35 * $x / $d))
+p=$((66 * $x / $d))
 l=$(($y-$p))
 m=$(echo $l | sed "s/-//")
 c=$([[ $l -lt 0 ]]&&echo true||echo false)
@@ -28,7 +28,7 @@ echo "————————————————————————�
 echo "I'm $b by $w points$e"
 echo "—————————————————————————————————————————"
 echo "Cam has earned $x points in $d days."
-echo "Cam would earn ~$p points in 35 days."
+echo "Cam would earn ~$p points in 66 days."
 echo $n
 if $c; then
 echo "—————————————————————————————————————————"
